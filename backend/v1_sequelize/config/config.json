@@ -1,0 +1,35 @@
+{
+
+    "development": {
+      "username": "bookuser",
+      "password": "password",
+      "database": "books",
+      "host": "127.0.0.1",
+      "dialect": "mysql",
+      "define": {}
+    },
+  
+  "test": {
+    "username": "bookuser",
+    "password": "password",
+    "database": "books",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "define": {}
+  },
+  "production": {
+    "username": "bookuser",
+    "password": "password",
+    "database": "books",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "use_env_variable": "DATABASE_URL",
+    "dialectOptions": {
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false
+      }
+    },
+    "define": {}
+  }
+}
