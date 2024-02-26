@@ -1,0 +1,19 @@
+{
+  "name": "bookapp",
+  "version": "1.0.0",
+  "description": "Demonstration of database connections",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/savkuoke/bookapp.git"
+  },
+  "author": "Keijo Kuosmanen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/savkuoke/bookapp/issues"
+  },
+  "homepage": "https://github.com/savkuoke/bookapp#readme"
+}
