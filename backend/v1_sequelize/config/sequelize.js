@@ -8,5 +8,7 @@ const sequelize = new Sequelize(config.database, config.username, config.passwor
   define: config.define || {} // Fallback to an empty object if define is not provided
   // additional options
 });
-
+sequelize.sync({ force: false }).then(() => {
+  console.log('Database & tables created!');
+});
 module.exports = sequelize;

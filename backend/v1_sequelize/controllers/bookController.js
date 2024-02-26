@@ -11,6 +11,7 @@ const bookController = {
   },
 
   addBook: async (req, res) => {
+    console.log("add book called"+req.body+"  "+req.body.title);
     try {
       const book = await Book.create(req.body);
       res.status(201).send(book);

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookApp</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>Book Manager</h1>
+    
+    <!-- Form for adding/updating a book -->
+    <form id="book-form">
+        <input type="hidden" id="book-id">
+        <input type="text" id="book-title" placeholder="Title" required>
+        <input type="text" id="book-author" placeholder="Author" required>
+        <textarea id="book-summary" placeholder="Summary" required></textarea>
+        <button type="submit">Submit</button>
+    </form>
+    
+    <!-- List of books -->
+    <ul id="books-list"></ul>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
