@@ -1,25 +1,44 @@
 let serverBaseUrl = 'http://localhost:3000/v1_sequelize';
  
 $(document).ready(function () {
-  // Fetch and display books
-  function fetchBooks() {
-      $.get(serverBaseUrl+'/books', function (books) {
-          $('#books-list').empty();
-          $('#books-list').append(
-            '<li>Title Author Summary Category</li>');
-          books.forEach(function (book) {
-              $('#books-list').append(
-                  `<li>
-                      <span><strong>${book.title}</span>
-                      </strong> by ${book.author}</span>
-                      </strong> by ${book.summary}</span>
-                      <button onclick="editBook('${book.id}')">Edit</button>
-                      <button onclick="deleteBook('${book.id}')">Delete</button>
-                  </li>`
-              );
-          });
-      });
-  }
+// Fetch and display books
+function fetchBooks() {
+    $.get(serverBaseUrl+'/books', function (books) {
+        $('#books-list').empty(); // Assuming #books-list is the container for the table
+        // Initialize the table with headers
+        var tableHTML = `
+            <table>
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Summary</th>
+                        <th>Category</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>`;
+
+        // Append rows to the table for each book
+        books.forEach(function (book) {
+            tableHTML += `<tr>
+                    <td>${book.title}</td>
+                    <td>${book.author}</td>
+                    <td>${book.summary}</td>
+                    <td>${book.categoryName}</td>
+                    <td>
+                    <button onclick="editBook('${book.id}')">Edit</button>
+                    <button onclick="deleteBook('${book.id}')">Delete</button>
+                    </td>
+                </tr>`;
+            });
+    // Close the table structure
+    tableHTML += '</tbody> </table>';
+
+    // Append the constructed table HTML to your books list container
+    $('#books-list').html(tableHTML);
+});
+}
 
   // Add or Update a book
   $('#book-form').submit(function (e) {
